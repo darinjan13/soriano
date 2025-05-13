@@ -57,12 +57,16 @@ class StudentController
             $errors['first_name'] = 'First name is required.';
         } elseif (strlen($data['first_name']) < 2) {
             $errors['first_name'] = 'First name must be at least 2 characters.';
+        } elseif (preg_match('/[0-9!@#$%^&*(),.?":{}|<>]/', $data['first_name'])) {
+            $errors['first_name'] = 'First name should not contain numbers or special characters.';
         }
 
         if (empty(trim($data['last_name'] ?? ''))) {
             $errors['last_name'] = 'Last name is required.';
         } elseif (strlen($data['last_name']) < 2) {
             $errors['last_name'] = 'Last name must be at least 2 characters.';
+        } elseif (preg_match('/[0-9!@#$%^&*(),.?":{}|<>]/', $data['last_name'])) {
+            $errors['last_name'] = 'Last name should not contain numbers or special characters.';
         }
 
         if (empty(trim($data['email'] ?? ''))) {
@@ -77,9 +81,12 @@ class StudentController
             $errors['course'] = 'Course is required.';
         } elseif (strlen($data['course']) < 2) {
             $errors['course'] = 'Course name must be at least 2 characters.';
+        } elseif (preg_match('/[0-9!@#$%^&*(),.?":{}|<>]/', $data['course'])) {
+            $errors['course'] = 'Course name should not contain numbers or special characters.';
         }
 
         return $errors;
     }
+
 
 }

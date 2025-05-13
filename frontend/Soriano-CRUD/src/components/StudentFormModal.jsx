@@ -110,14 +110,14 @@ export default function StudentFormModal({ onClose, onStudentSaved, student }) {
                     <div className="flex justify-center gap-2 pt-2">
                         <button
                             type="button"
-                            className="bg-gray-300 hover:bg-gray-400 px-4 py-2 rounded"
+                            className="bg-gray-300 hover:bg-gray-400 px-4 py-2 rounded cursor-pointer"
                             onClick={onClose}
                         >
                             Cancel
                         </button>
                         <button
                             type="submit"
-                            className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded"
+                            className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded cursor-pointer"
                         >
                             {isEdit ? 'Update' : 'Save'}
                         </button>

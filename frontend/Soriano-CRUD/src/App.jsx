@@ -13,7 +13,7 @@ function App() {
           📋 Student Information System
         </h1>
         <button
-          className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
+          className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition cursor-pointer"
           onClick={() => setShowModal(true)}
         >
           ➕ Add Student
